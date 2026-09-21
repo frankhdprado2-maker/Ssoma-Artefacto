@@ -1,0 +1,60 @@
+{
+  "version": "FuzzyRiskEngine_v001",
+  "system": "Mamdani",
+  "EXPERT_VALIDATION_REQUIRED": true,
+  "parameter_status": "PROVISIONAL_ENGINEERING_NOT_SSOMA_VALIDATED",
+  "operators": {"and": "min", "implication": "min", "aggregation": "max", "defuzzification": "sampled_centroid"},
+  "input_universe": [0, 1],
+  "input_variables": ["ppe_evidence", "hazard_proximity", "machinery_proximity", "fall_evidence", "temporal_persistence"],
+  "input_memberships": {
+    "LOW": {"type": "trapezoidal", "points": [0, 0, 0.15, 0.4]},
+    "MEDIUM": {"type": "triangular", "points": [0.15, 0.5, 0.85]},
+    "HIGH": {"type": "trapezoidal", "points": [0.6, 0.85, 1, 1]}
+  },
+  "membership_assignment": {"ppe_evidence": "input_memberships", "hazard_proximity": "input_memberships", "machinery_proximity": "input_memberships", "fall_evidence": "input_memberships", "temporal_persistence": "input_memberships"},
+  "output_universe": {"min": 0, "max": 100, "step": 0.5},
+  "output_memberships": {
+    "LOW": {"type": "trapezoidal", "points": [0, 0, 12, 25]},
+    "MEDIUM": {"type": "triangular", "points": [20, 40, 60]},
+    "HIGH": {"type": "triangular", "points": [50, 65, 80]},
+    "CRITICAL": {"type": "trapezoidal", "points": [75, 90, 100, 100]}
+  },
+  "risk_levels": [{"level": "LOW", "lower_inclusive": 0}, {"level": "MEDIUM", "lower_inclusive": 25}, {"level": "HIGH", "lower_inclusive": 50}, {"level": "CRITICAL", "lower_inclusive": 75}],
+  "normalization": {
+    "persistence_full_seconds": 2.0,
+    "proximity_distance_scale": 0.5,
+    "source_severity": {"fire": 1.0, "smoke": 0.75, "machinery": 1.0, "vehicle": 0.9},
+    "fall_state_weights": {"UNKNOWN": 0, "UPRIGHT": 0, "TRANSITION": 0.4, "HORIZONTAL": 0.6, "POSSIBLE_FALL": 1.0},
+    "fall_requires_candidate_event": true,
+    "ppe_allowed_states": ["POSSIBLE_MISSING"],
+    "ppe_support_only_excluded": ["goggles", "safety_boots"],
+    "context_required_state": "NEAR"
+  },
+  "safety": {"minimum_support_frames": 2, "minimum_support_seconds_for_high": 0.25, "short_evidence_score_cap": 49, "no_rule_score": 0},
+  "dominant_factor_minimum": 0.2,
+  "event_priority": {"FALL_CANDIDATE": 6, "HAZARD_PROXIMITY": 5, "PPE_POSSIBLE_MISSING": 4, "MACHINERY_PROXIMITY": 3, "VEHICLE_PROXIMITY": 3, "PPE_PRESENT": 0},
+  "video": {"panel_width": 440, "row_height": 48, "heading_height": 36, "font_scale": 0.44, "detail_font_scale": 0.32},
+  "rules": [
+    {"id": "R01", "if_all": {"ppe_evidence": "LOW", "hazard_proximity": "LOW", "machinery_proximity": "LOW", "fall_evidence": "LOW"}, "then": "LOW"},
+    {"id": "R02", "if_all": {"temporal_persistence": "LOW"}, "then": "LOW"},
+    {"id": "R03", "if_all": {"ppe_evidence": "MEDIUM", "temporal_persistence": "MEDIUM"}, "then": "MEDIUM"},
+    {"id": "R04", "if_all": {"ppe_evidence": "HIGH", "temporal_persistence": "MEDIUM"}, "then": "MEDIUM"},
+    {"id": "R05", "if_all": {"ppe_evidence": "HIGH", "temporal_persistence": "HIGH"}, "then": "HIGH"},
+    {"id": "R06", "if_all": {"hazard_proximity": "MEDIUM", "temporal_persistence": "MEDIUM"}, "then": "MEDIUM"},
+    {"id": "R07", "if_all": {"hazard_proximity": "HIGH", "temporal_persistence": "MEDIUM"}, "then": "HIGH"},
+    {"id": "R08", "if_all": {"hazard_proximity": "HIGH", "temporal_persistence": "HIGH"}, "then": "HIGH"},
+    {"id": "R09", "if_all": {"machinery_proximity": "MEDIUM", "temporal_persistence": "MEDIUM"}, "then": "MEDIUM"},
+    {"id": "R10", "if_all": {"machinery_proximity": "HIGH", "hazard_proximity": "LOW", "ppe_evidence": "LOW", "temporal_persistence": "MEDIUM"}, "then": "MEDIUM"},
+    {"id": "R11", "if_all": {"machinery_proximity": "HIGH", "hazard_proximity": "LOW", "ppe_evidence": "LOW", "temporal_persistence": "HIGH"}, "then": "MEDIUM"},
+    {"id": "R12", "if_all": {"ppe_evidence": "HIGH", "machinery_proximity": "HIGH", "temporal_persistence": "HIGH"}, "then": "HIGH"},
+    {"id": "R13", "if_all": {"hazard_proximity": "MEDIUM", "machinery_proximity": "MEDIUM", "temporal_persistence": "HIGH"}, "then": "HIGH"},
+    {"id": "R14", "if_all": {"hazard_proximity": "HIGH", "machinery_proximity": "HIGH", "temporal_persistence": "HIGH"}, "then": "CRITICAL"},
+    {"id": "R15", "if_all": {"fall_evidence": "MEDIUM", "temporal_persistence": "MEDIUM"}, "then": "HIGH"},
+    {"id": "R16", "if_all": {"fall_evidence": "HIGH", "temporal_persistence": "HIGH"}, "then": "CRITICAL"},
+    {"id": "R17", "if_all": {"ppe_evidence": "MEDIUM", "temporal_persistence": "HIGH"}, "then": "MEDIUM"},
+    {"id": "R18", "if_all": {"hazard_proximity": "MEDIUM", "temporal_persistence": "HIGH"}, "then": "MEDIUM"},
+    {"id": "R19", "if_all": {"machinery_proximity": "MEDIUM", "temporal_persistence": "HIGH"}, "then": "MEDIUM"},
+    {"id": "R20", "if_all": {"fall_evidence": "MEDIUM", "temporal_persistence": "HIGH"}, "then": "HIGH"},
+    {"id": "R21", "if_all": {"fall_evidence": "HIGH", "temporal_persistence": "MEDIUM"}, "then": "HIGH"}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "model": "yolo11n-pose.pt",
+  "source": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt",
+  "sha256": "869e83fcdffdc7371fa4e34cd8e51c838cc729571d1635e5141e3075e9319dc0",
+  "architecture": "YOLO11 nano Pose",
+  "keypoint_schema": "COCO 17 x (x,y,confidence)",
+  "keypoint_names": [
+    "nose",
+    "left_eye",
+    "right_eye",
+    "left_ear",
+    "right_ear",
+    "left_shoulder",
+    "right_shoulder",
+    "left_elbow",
+    "right_elbow",
+    "left_wrist",
+    "right_wrist",
+    "left_hip",
+    "right_hip",
+    "left_knee",
+    "right_knee",
+    "left_ankle",
+    "right_ankle"
+  ],
+  "license": "AGPL-3.0; upstream enterprise licensing alternative",
+  "license_source": "https://github.com/ultralytics/ultralytics/blob/v8.3.203/LICENSE",
+  "documentation": "https://github.com/ultralytics/ultralytics/blob/v8.3.203/docs/en/tasks/pose.md",
+  "compatible_runtime": "Ultralytics 8.3.203; verify loading separately",
+  "selection": "Nano: smallest YOLO11 pose variant supported by installed runtime. No runtime upgrade.",
+  "checksum_provenance": "Locally computed after official HTTPS acquisition; not an independent publisher signature"
+}

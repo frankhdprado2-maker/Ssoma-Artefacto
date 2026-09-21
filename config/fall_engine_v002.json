@@ -1,0 +1,10 @@
+{
+  "imgsz": 640, "pose_conf": 0.25, "nms_iou": 0.70,
+  "association_iou": 0.25, "ambiguity_margin": 0.08,
+  "keypoint_conf": 0.5, "minimum_keypoints": 6,
+  "upright_angle_max": 30, "horizontal_angle_min": 60,
+  "posture_change_min": 35, "horizontal_body_ratio": 0.9,
+  "upright_seconds": 0.4, "persistence_seconds": 0.5,
+  "transition_seconds": 1.5, "descent_heights": 0.20,
+  "height_reduction_min": 0.25, "downward_velocity_min": 0.4
+}

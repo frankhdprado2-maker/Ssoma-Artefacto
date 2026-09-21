@@ -1,0 +1,15 @@
+{
+  "version": "tracking_ppe_v001",
+  "tracker": {"max_gap_frames": 30, "visible_prediction_frames": 2, "min_iou": 0.10, "max_center_distance": 0.45, "max_area_ratio": 3.0},
+  "association": {"minimum_score": 0.55, "ambiguity_margin": 0.08, "weights": [0.20, 0.30, 0.15, 0.20, 0.15]},
+  "temporal": {"window_frames": 15, "minimum_positive_frames": 2, "hold_frames": 2},
+  "regions": {
+    "helmet": [[-0.10, -0.12, 1.10, 0.28]],
+    "goggles": [[0.10, 0.00, 0.90, 0.28]],
+    "safety_vest": [[0.05, 0.18, 0.95, 0.72]],
+    "safety_harness": [[0.00, 0.15, 1.00, 0.82]],
+    "gloves": [[-0.25, 0.25, 0.40, 0.88], [0.60, 0.25, 1.25, 0.88]],
+    "safety_boots": [[-0.15, 0.72, 1.15, 1.12]]
+  },
+  "maximum_area_fraction": {"helmet": 0.25, "goggles": 0.10, "safety_vest": 0.75, "safety_harness": 0.85, "gloves": 0.16, "safety_boots": 0.30}
+}

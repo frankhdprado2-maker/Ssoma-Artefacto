@@ -1,0 +1,22 @@
+# Python 3.12 Linux CPU x86_64; ARM64: deploy/oci/requirements.arm64.lock.txt
+--extra-index-url https://download.pytorch.org/whl/cpu
+imageio-ffmpeg==0.6.0
+fastapi==0.141.1
+starlette==1.6.0
+uvicorn==0.53.0
+python-multipart==0.0.32
+torch==2.9.1+cpu
+torchvision==0.24.1+cpu
+ultralytics==8.3.203
+numpy==1.26.4
+scipy==1.17.1
+opencv-python==4.11.0.86
+pillow==12.3.0
+pyyaml==6.0.1
+matplotlib==3.11.2
+requests==2.31.0
+psutil==7.2.2
+polars==1.44.2
+ultralytics-thop==2.1.6
+pydantic==2.13.5
+anyio==4.15.1

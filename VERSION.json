@@ -1,0 +1,57 @@
+{
+  "product": "Sistema Inteligente SSOMA",
+  "runtime_release": "SSOMA_RUNTIME_v001",
+  "scientific_release": "SSOMA_APPLICATION_RC1",
+  "deployment_adapter": "v001",
+  "scientific_hashes": {
+    "src/detection/event_engine_v001.py": "ec0721ed5aedd9d7a30510009a5f251d428d17f96326533f6e14a2bfe82d7675",
+    "src/detection/fall_engine_v002.py": "090a5f626b7167114d48391313a116e903df10e3d9af34366be1e8ad5ab4bbdc",
+    "src/detection/fuzzy_risk_v001.py": "127ef91a400556433302b1983176a67a22f86c9178909a885b5133c79d89ee2b",
+    "src/detection/inference_v001.py": "5c2b5d0accd8a87ae68aa1fef183baf6af38e60eca76bd779681e4df4a710d1d",
+    "src/detection/tracking_ppe_v001.py": "66c8382c30a3bf0c5d62c4d9736eb1a33d53db61efd7d4873a313f26b65157cc",
+    "src/detection/xai_evidence_v001.py": "e51aaca953b3414bb1da5c887e0495a53201df24c28fe76ac3c8a71307d60242",
+    "config/tracking_ppe_v001.json": "6c20084355848c76444c3c1e2bc5edcc018af5370869c45aa94a736407cf4915",
+    "config/event_engine_v001.json": "52940efd0497c024b86a809f596a844a394f5be8611f48eba57e325ebb4a2f7a",
+    "config/fall_engine_v002.json": "e1c1c5148fd138870fa37697ee2adea0f29290d99027c6f6bc69119b04f7c930",
+    "config/fuzzy_risk_v001.json": "785b9b63f948275288259c1e2bc3092854542a622f598d5480bf9b7e7efa647a",
+    "models/pose_v002/source_metadata.json": "c9d2f6a6695d6f48c13b974233dcc6b4cc36582abd326710688f61aad5cc79b9"
+  },
+  "model_manifest_sha256": "2ee9a255663e523a2082005a1ae0a72ff108654c2d001530fc6688d1b6aef634",
+  "registry_sha256": "c41375e78033a6101514b1c20fae22bcb933e75705bfb9de7c481c25a02131cf",
+  "ui_hashes": {
+    "web/templates/index.html": "fe9ea2975bb2b19947831f0c68f2be33b73ff269573de7cc91285b83d575b733",
+    "web/static/app.css": "dcf212c4dcad1dcd1bfe791908c33bec33074afe24f00c09342601555d04f8ad",
+    "web/static/app.js": "ff4469012a213b3ce292c753f087ade57df4f353911ae5ef9590136a6c5cbb2f"
+  },
+  "operational_changes": [
+    "Relative local directory defaults; data directory is writable",
+    "Branding routes use existing placeholder until final PNGs exist",
+    "Portable launchers and self check",
+    "OCI reference fixture is supplied externally, never included as history"
+  ],
+  "validation": {
+    "source_repo_dependency": false,
+    "models_hash_pass": true,
+    "original_rc1_hash_status": "PASS",
+    "critical_hashes": 131,
+    "server_smoke": "PASS",
+    "health": "PASS",
+    "self_check": "6/6 PASS",
+    "windows_launcher": "PASS via WSL2 (distribution selectable)",
+    "cpu_e2e_frames": 60,
+    "cpu_e2e_seconds": 51.621439784,
+    "events": 14,
+    "tracks": 2,
+    "risks": 2,
+    "media_and_frames": "PASS",
+    "data_directories_empty": true
+  },
+  "branding_status": "PLACEHOLDER_SVG; final transparent PNGs not yet available",
+  "ARM64_RUNTIME_VERIFIED": false,
+  "publication": {
+    "weights_included": false,
+    "model_files_required_locally": 8,
+    "global_project_license": "UNDECIDED",
+    "scope": "Runtime source and configuration; no datasets or historical outputs"
+  }
+}

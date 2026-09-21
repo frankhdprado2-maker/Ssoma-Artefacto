@@ -1,0 +1,71 @@
+{
+  "schema": "oci_model_manifest_v001",
+  "model_root_env": "SSOMA_MODEL_DIR",
+  "default_model_root": "/opt/ssoma/models",
+  "files": [
+    {
+      "filename": "PERSON_B.pt",
+      "sha256": "41fba0e74f669b94ad135170415037412116e187de3e00b52df830cff4f46daa",
+      "size": 38056337,
+      "target_path": "${SSOMA_MODEL_DIR}/PERSON_B.pt",
+      "distribution_status": "DISTRIBUTION_REQUIRED_LOCALLY",
+      "public_file": false
+    },
+    {
+      "filename": "VEST_B.pt",
+      "sha256": "0baeb96413edcf7a647a79f7d4eab73f8bb4f3ad695d6e86628c5d9c497b00a3",
+      "size": 38056337,
+      "target_path": "${SSOMA_MODEL_DIR}/VEST_B.pt",
+      "distribution_status": "DISTRIBUTION_REQUIRED_LOCALLY",
+      "public_file": false
+    },
+    {
+      "filename": "GLOVES_B.pt",
+      "sha256": "da49e994ef043bd28fc408121b264b1f9429ab214108d583ca1d67bca5b0faf8",
+      "size": 37983385,
+      "target_path": "${SSOMA_MODEL_DIR}/GLOVES_B.pt",
+      "distribution_status": "DISTRIBUTION_REQUIRED_LOCALLY",
+      "public_file": false
+    },
+    {
+      "filename": "GLOVES_B_architecture.pt",
+      "sha256": "6c0fb328546bee49b096cf93382a03c9475073f2f94139ab368668b452069324",
+      "size": 37984921,
+      "target_path": "${SSOMA_MODEL_DIR}/GLOVES_B_architecture.pt",
+      "distribution_status": "DISTRIBUTION_REQUIRED_LOCALLY",
+      "public_file": false
+    },
+    {
+      "filename": "PPE_BASELINE.pt",
+      "sha256": "4365900ac40da6386a879fca0b0391535c918232813b6c7f8245b63ca17d94d1",
+      "size": 19185626,
+      "target_path": "${SSOMA_MODEL_DIR}/PPE_BASELINE.pt",
+      "distribution_status": "DISTRIBUTION_REQUIRED_LOCALLY",
+      "public_file": false
+    },
+    {
+      "filename": "HAZARD.pt",
+      "sha256": "7998b326e33455b9348ea4aa6ef04fb855426539f42fffcc930e03c9d1917f4e",
+      "size": 22518058,
+      "target_path": "${SSOMA_MODEL_DIR}/HAZARD.pt",
+      "distribution_status": "DISTRIBUTION_REQUIRED_LOCALLY",
+      "public_file": false
+    },
+    {
+      "filename": "CONTEXT.pt",
+      "sha256": "d03da7840cf0634559976d99f6dae8d8b4d2f36a3b0fb637a1554728e3456d77",
+      "size": 22493866,
+      "target_path": "${SSOMA_MODEL_DIR}/CONTEXT.pt",
+      "distribution_status": "DISTRIBUTION_REQUIRED_LOCALLY",
+      "public_file": false
+    },
+    {
+      "filename": "POSE.pt",
+      "sha256": "869e83fcdffdc7371fa4e34cd8e51c838cc729571d1635e5141e3075e9319dc0",
+      "size": 6255593,
+      "target_path": "${SSOMA_MODEL_DIR}/POSE.pt",
+      "distribution_status": "DISTRIBUTION_REQUIRED_LOCALLY",
+      "public_file": false
+    }
+  ]
+}

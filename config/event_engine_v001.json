@@ -1,0 +1,8 @@
+{
+  "version": "EVENT_ENGINE_v001",
+  "ppe": {"missing_seconds": 2.0, "minimum_person_height": 100, "minimum_confidence": 0.4},
+  "context": {"near_distance_person_heights": 0.5, "minimum_frames": 3},
+  "fall": {"upright_aspect_max": 0.75, "horizontal_aspect_min": 1.2, "upright_seconds": 0.5, "horizontal_seconds": 0.5, "transition_seconds": 1.0, "minimum_descent_heights": 0.25},
+  "events": {"minimum_frames": 2},
+  "pose_model": null
+}

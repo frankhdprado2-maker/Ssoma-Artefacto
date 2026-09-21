@@ -1,0 +1,262 @@
+{
+  "schema": "deploy_model_registry_v001",
+  "files": [
+    {
+      "model_id": "PERSON_B",
+      "role": "checkpoint",
+      "relative_path": "PERSON_B.pt",
+      "sha256": "41fba0e74f669b94ad135170415037412116e187de3e00b52df830cff4f46daa",
+      "size_mb": 38.056337,
+      "architecture": "YOLO11s",
+      "classes": {
+        "0": "person"
+      }
+    },
+    {
+      "model_id": "VEST_B",
+      "role": "checkpoint",
+      "relative_path": "VEST_B.pt",
+      "sha256": "0baeb96413edcf7a647a79f7d4eab73f8bb4f3ad695d6e86628c5d9c497b00a3",
+      "size_mb": 38.056337,
+      "architecture": "YOLO11s",
+      "classes": {
+        "0": "vest"
+      }
+    },
+    {
+      "model_id": "GLOVES_B",
+      "role": "checkpoint",
+      "relative_path": "GLOVES_B.pt",
+      "sha256": "da49e994ef043bd28fc408121b264b1f9429ab214108d583ca1d67bca5b0faf8",
+      "size_mb": 37.983385,
+      "architecture": "YOLO11s",
+      "classes": {
+        "0": "gloves"
+      }
+    },
+    {
+      "model_id": "GLOVES_B",
+      "role": "architecture_checkpoint",
+      "relative_path": "GLOVES_B_architecture.pt",
+      "sha256": "6c0fb328546bee49b096cf93382a03c9475073f2f94139ab368668b452069324",
+      "size_mb": 37.984921,
+      "architecture": "YOLO11s",
+      "classes": {
+        "0": "gloves"
+      }
+    },
+    {
+      "model_id": "PPE_BASELINE",
+      "role": "checkpoint",
+      "relative_path": "PPE_BASELINE.pt",
+      "sha256": "4365900ac40da6386a879fca0b0391535c918232813b6c7f8245b63ca17d94d1",
+      "size_mb": 19.185626,
+      "architecture": "YOLO11s",
+      "classes": {
+        "0": "person",
+        "1": "helmet",
+        "2": "safety_vest",
+        "3": "gloves",
+        "4": "goggles",
+        "5": "safety_boots",
+        "6": "safety_harness"
+      }
+    },
+    {
+      "model_id": "HAZARD",
+      "role": "checkpoint",
+      "relative_path": "HAZARD.pt",
+      "sha256": "7998b326e33455b9348ea4aa6ef04fb855426539f42fffcc930e03c9d1917f4e",
+      "size_mb": 22.518058,
+      "architecture": "YOLOv8s",
+      "classes": {
+        "0": "smoke",
+        "1": "fire"
+      }
+    },
+    {
+      "model_id": "CONTEXT",
+      "role": "checkpoint",
+      "relative_path": "CONTEXT.pt",
+      "sha256": "d03da7840cf0634559976d99f6dae8d8b4d2f36a3b0fb637a1554728e3456d77",
+      "size_mb": 22.493866,
+      "architecture": "YOLOv8s",
+      "classes": {
+        "0": "vehicle",
+        "1": "machinery"
+      }
+    },
+    {
+      "model_id": "POSE",
+      "role": "checkpoint",
+      "relative_path": "POSE.pt",
+      "sha256": "869e83fcdffdc7371fa4e34cd8e51c838cc729571d1635e5141e3075e9319dc0",
+      "size_mb": 6.255593,
+      "architecture": "YOLO11n-pose",
+      "classes": {
+        "0": "person COCO17 pose"
+      }
+    }
+  ],
+  "registry": {
+    "schema": "inference_stack_v001",
+    "canonical_classes": [
+      "person",
+      "helmet",
+      "safety_vest",
+      "gloves",
+      "goggles",
+      "safety_boots",
+      "safety_harness",
+      "smoke",
+      "fire",
+      "vehicle",
+      "machinery"
+    ],
+    "models": [
+      {
+        "model_id": "PERSON_B",
+        "domain": "PPE",
+        "checkpoint": "PERSON_B.pt",
+        "sha256": "41fba0e74f669b94ad135170415037412116e187de3e00b52df830cff4f46daa",
+        "architecture": "YOLO11s",
+        "local_classes": {
+          "0": "person"
+        },
+        "canonical_mapping": {
+          "0": "person"
+        },
+        "development_status": "FROZEN_B_DEVELOPMENT_CANDIDATE",
+        "format": "ultralytics_checkpoint"
+      },
+      {
+        "model_id": "VEST_B",
+        "domain": "PPE",
+        "checkpoint": "VEST_B.pt",
+        "sha256": "0baeb96413edcf7a647a79f7d4eab73f8bb4f3ad695d6e86628c5d9c497b00a3",
+        "architecture": "YOLO11s",
+        "local_classes": {
+          "0": "vest"
+        },
+        "canonical_mapping": {
+          "0": "safety_vest"
+        },
+        "development_status": "FROZEN_B_DEVELOPMENT_CANDIDATE",
+        "format": "ultralytics_checkpoint"
+      },
+      {
+        "model_id": "GLOVES_B",
+        "domain": "PPE",
+        "checkpoint": "GLOVES_B.pt",
+        "sha256": "da49e994ef043bd28fc408121b264b1f9429ab214108d583ca1d67bca5b0faf8",
+        "architecture": "YOLO11s",
+        "local_classes": {
+          "0": "gloves"
+        },
+        "canonical_mapping": {
+          "0": "gloves"
+        },
+        "development_status": "FROZEN_B_DEVELOPMENT_CANDIDATE",
+        "format": "ema_state_dict",
+        "architecture_checkpoint": "GLOVES_B_architecture.pt",
+        "architecture_sha256": "6c0fb328546bee49b096cf93382a03c9475073f2f94139ab368668b452069324"
+      },
+      {
+        "model_id": "PPE_BASELINE",
+        "domain": "PPE",
+        "checkpoint": "PPE_BASELINE.pt",
+        "sha256": "4365900ac40da6386a879fca0b0391535c918232813b6c7f8245b63ca17d94d1",
+        "architecture": "YOLO11s",
+        "local_classes": {
+          "0": "person",
+          "1": "helmet",
+          "2": "safety_vest",
+          "3": "gloves",
+          "4": "goggles",
+          "5": "safety_boots",
+          "6": "safety_harness"
+        },
+        "canonical_mapping": {
+          "1": "helmet",
+          "4": "goggles",
+          "5": "safety_boots",
+          "6": "safety_harness"
+        },
+        "development_status": "BASELINE; boots/goggles WEAK_BASELINE_OPERATIONAL",
+        "format": "ultralytics_checkpoint"
+      },
+      {
+        "model_id": "HAZARD",
+        "domain": "HAZARD",
+        "checkpoint": "HAZARD.pt",
+        "sha256": "7998b326e33455b9348ea4aa6ef04fb855426539f42fffcc930e03c9d1917f4e",
+        "architecture": "YOLOv8s",
+        "local_classes": {
+          "0": "smoke",
+          "1": "fire"
+        },
+        "canonical_mapping": {
+          "0": "smoke",
+          "1": "fire"
+        },
+        "development_status": "OPERATIONAL_CANDIDATE; scientific comparison INCONCLUSIVE",
+        "format": "ultralytics_checkpoint"
+      },
+      {
+        "model_id": "CONTEXT",
+        "domain": "CONTEXT",
+        "checkpoint": "CONTEXT.pt",
+        "sha256": "d03da7840cf0634559976d99f6dae8d8b4d2f36a3b0fb637a1554728e3456d77",
+        "architecture": "YOLOv8s",
+        "local_classes": {
+          "0": "vehicle",
+          "1": "machinery"
+        },
+        "canonical_mapping": {
+          "0": "vehicle",
+          "1": "machinery"
+        },
+        "development_status": "OPERATIONAL_CANDIDATE; scientific comparison INCONCLUSIVE",
+        "format": "ultralytics_checkpoint"
+      }
+    ],
+    "inference": {
+      "imgsz": 640,
+      "conf": 0.25,
+      "iou": 0.7,
+      "max_det": 300,
+      "half": false,
+      "agnostic_nms": false,
+      "calibration_performed": false
+    },
+    "evidence_policy": {
+      "person": "DETECTION_ONLY",
+      "helmet": "DETECTION_ONLY",
+      "safety_vest": "DETECTION_ONLY",
+      "gloves": "DETECTION_ONLY",
+      "goggles": "SUPPORT_ONLY",
+      "safety_boots": "SUPPORT_ONLY",
+      "safety_harness": "DETECTION_ONLY",
+      "smoke": "DETECTION_ONLY",
+      "fire": "DETECTION_ONLY",
+      "vehicle": "DETECTION_ONLY",
+      "machinery": "DETECTION_ONLY"
+    },
+    "compliance_rules": false,
+    "hazard_selection": "User explicitly selected YOLOv8s for this integration",
+    "gold_claim": false
+  },
+  "scientific_inputs": {
+    "src/detection/event_engine_v001.py": "ec0721ed5aedd9d7a30510009a5f251d428d17f96326533f6e14a2bfe82d7675",
+    "src/detection/fall_engine_v002.py": "090a5f626b7167114d48391313a116e903df10e3d9af34366be1e8ad5ab4bbdc",
+    "src/detection/fuzzy_risk_v001.py": "127ef91a400556433302b1983176a67a22f86c9178909a885b5133c79d89ee2b",
+    "src/detection/inference_v001.py": "5c2b5d0accd8a87ae68aa1fef183baf6af38e60eca76bd779681e4df4a710d1d",
+    "src/detection/tracking_ppe_v001.py": "66c8382c30a3bf0c5d62c4d9736eb1a33d53db61efd7d4873a313f26b65157cc",
+    "src/detection/xai_evidence_v001.py": "e51aaca953b3414bb1da5c887e0495a53201df24c28fe76ac3c8a71307d60242",
+    "config/tracking_ppe_v001.json": "6c20084355848c76444c3c1e2bc5edcc018af5370869c45aa94a736407cf4915",
+    "config/event_engine_v001.json": "52940efd0497c024b86a809f596a844a394f5be8611f48eba57e325ebb4a2f7a",
+    "config/fall_engine_v002.json": "e1c1c5148fd138870fa37697ee2adea0f29290d99027c6f6bc69119b04f7c930",
+    "config/fuzzy_risk_v001.json": "785b9b63f948275288259c1e2bc3092854542a622f598d5480bf9b7e7efa647a",
+    "models/pose_v002/source_metadata.json": "c9d2f6a6695d6f48c13b974233dcc6b4cc36582abd326710688f61aad5cc79b9"
+  }
+}
